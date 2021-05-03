@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="background-color: white;">
+            <img class="logo" src="../assets/Images/mycart_logo.jpg" alt="No Image">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="options nav-link active" aria-current="page" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="options nav-link active" href="about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="options nav-link active" href="products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="options nav-link active" href="contacts">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                <h3 class="mycart_head">Welcome To <span><strong>myCarT</strong></span> </h3>
+                <p class="intro" style="margin-top: 20px;">
+                    E-commerce is revolutionizing the way we all shop in India. Why do you want to hop from one
+                    store to
+                    another in search of the latest phone when you can find it on the Internet in a single click?
+                    Not
+                    only mobiles. MyCarT houses everything you can possibly imagine, from trending electronics like
+                    laptops, tablets, smartphones, and mobile accessories to in-vogue fashion staples like shoes,
+                    clothing and lifestyle accessories; from modern furniture like sofa sets, dining tables, and
+                    wardrobes to appliances that make your life easy like washing machines, TVs, ACs, mixer grinder
+                    juicers and other time-saving kitchen and small appliances; from home furnishings like cushion
+                    covers, mattresses and bedsheets to toys and musical instruments, we got them all covered. You
+                    name
+                    it, and you can stay assured about finding them all here. For those of you with erratic working
+                    hours, MyCarT is your best bet. Shop in your PJs, at night or in the wee hours of the morning.
+                    This e-commerce never shuts down..
+                </p>
+                <p>
+                    <button class="learn">Learn More</button>
+                </p>
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12">
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <form [formGroup]="loginForm">
+                            <div style="margin-top: 50px;" class="mb-3">
+                                <label for="Username" class="form-label">Username </label>
+                                <input type="text" formControlName="username" name="user" class="form-control"
+                                    id="user">
+                                <!-- <div style="color: red;"
+                                    *ngIf="(this.loginForm.get('username')?.touched || this.loginForm.get('username')?.dirty) && this.loginForm.get('username')?.errors"
+                                    class="error">Invalid Username </div> -->
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="Password" class="form-label">Password</label>
+                                <input type="password" formControlName="password" name="pass" class="form-control"
+                                    id="pass">
+                                <!-- <div style="color: red;"
+                                    *ngIf="this.loginForm.get('password')?.dirty&&this.loginForm.get('password')?.errors"
+                                    class="error">Invalid Password</div> -->
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+
+                            <button style="margin-left: 20px;" type="submit" class="btn btn-primary"
+                                (click)="signUp()">Sign
+                                up</button>
+                        </form>
+
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+</html>
