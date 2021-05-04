@@ -9,27 +9,22 @@ const options = {
   providedIn: 'root'
 })
 export class DataService {
-  accountData={
-    amalnc:{"username":"amalnc","password":"amalnc"},
-
-  }
-
   constructor(private http: HttpClient, private router: Router ) { }
 
   login(username: any, password: any) {
 
-    // const data = {
-    //   username,
-    //   password
-    // }
-    // return this.http.post("http://localhost:3000/login", data, options);
+    const data = {
+      username,
+      password
+    }
+    return this.http.post("http://localhost:3000/login", data, options);
   }
   signUp(username: any, name: any, password: any) {
-    // const data = {
-    //   username,
-    //   name,
-    //   password
-    // }
-    // return this.http.post("http://localhost:3000/register", data, options);
+    const data = {
+      username,
+      name,
+      password
+    }
+    return this.http.post("http://localhost:3000/signup", data, options);
   }
 }

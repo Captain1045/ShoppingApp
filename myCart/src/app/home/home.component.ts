@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   login() {
-    alert("Login Button Clicked!");
+    //alert("Login Button Clicked!");
     if (this.loginForm.valid) {
       var username = this.loginForm.value.username;
       var password = this.loginForm.value.password;
@@ -29,11 +29,12 @@ export class HomeComponent implements OnInit {
     }
     else{
       alert(this.loginForm.valid);
-      alert("Invalid Data");
+      alert("Invalid Data! Please try again");
     }
   }
   signUp() {
     alert("Sign Up Clicked");
+    this.router.navigateByUrl("signup");
   }
 
 }

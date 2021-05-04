@@ -5,18 +5,17 @@
 
 }
 .logo{
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 100px;
+    border-image-width: 40px;
 }
+
 .options{
+    margin-left: 100px;
     color: black;
     text-shadow: 10px;
     font-size: large;
     font-weight: 600;
-}
-.sub_head
-{
-    color:#5e068a;
 }
 span
 {
@@ -24,16 +23,6 @@ span
 }
 .intro{
     line-height: 30px;
-}
-.learn
-{
-    background-color: rgb(79, 19, 107);
-    color: white;
-    font-weight: 600;
-    margin-top: 50px;
-    border-radius: 20px;
-    padding: 10px 20px;
-    
 }
 .view
 {
@@ -44,8 +33,6 @@ span
     padding: 10px 20px;
     
 }
-.learn:hover
-{
-    background-color: white;
-    color: rgb(79, 19, 107) ;
+div{
+    position: relative;
 }
