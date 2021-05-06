@@ -19,11 +19,14 @@ export class DataService {
     }
     return this.http.post("http://localhost:3000/login", data, options);
   }
-  signUp(username: any, name: any, password: any) {
+  signUp(username: any, password: any, name: any,pincode:any,phone:any,gender:any) {
     const data = {
       username,
+      password,
       name,
-      password
+      pincode,
+      phone,
+      gender
     }
     return this.http.post("http://localhost:3000/signup", data, options);
   }

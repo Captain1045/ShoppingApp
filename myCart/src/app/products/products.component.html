@@ -39,10 +39,95 @@
                         <a class="options nav-link active" href="contact">Contact</a>
                     </li>
 
+
+
                 </ul>
             </div>
         </div>
     </nav>
-</body>
+    <div class="logout">
+        Welcome <strong>{{name}} </strong> <button type="button" style="border-radius: 20px;"
+            (click)="logout()">Logout</button>
 
-<p>products works!</p>
+    </div>
+
+    <strong>Category</strong> <select name="category" id="category">
+        <option value="gents">Gents</option>
+        <option value="ladies">Ladies</option>
+        <option value="kids">Kids</option>
+        <option value="electronics">Electronics</option>
+        <option value="others">others</option>
+
+    </select>
+    <div style="margin-top: 30px;" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/Images/samsung1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product_name}}</h5>
+                        <p class="card-text">Company : {{product_company}</p>
+                        <p class="card-text">Price : {{product_price}</p>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/Images/samsung2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product_name}}</h5>
+                        <p class="card-text">Company : {{product_company}</p>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/Images/oneplus1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product_name}}</h5>
+                        <p class="card-text">Company : {{product_company}</p>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/Images/oneplus2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product_name}}</h5>
+                        <p class="card-text">Company : {{product_company}</p>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/Images/iphone1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product_name}}</h5>
+                        <p class="card-text">Company : {{product_company}</p>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../assets/Images/iphone2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product_name}}</h5>
+                        <p class="card-text">Company : {{product_company}</p>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>

@@ -79,20 +79,20 @@
                         <form [formGroup]="loginForm">
                             <div style="margin-top: 100px;" class="mb-3">
                                 <label for="Username" class="form-label">Username </label>
-                                <input type="text" formControlName="username" name="user" class="form-control"
+                                <input type="text" formControlName="username" name="username" class="form-control"
                                     id="user">
-                                <!-- <div style="color: red;"
+                                <div style="color: red;"
                                     *ngIf="(this.loginForm.get('username')?.touched || this.loginForm.get('username')?.dirty) && this.loginForm.get('username')?.errors"
-                                    class="error">Invalid Username </div> -->
+                                    class="error">Invalid Username </div>
 
                             </div>
                             <div class="mb-3">
                                 <label for="Password" class="form-label">Password</label>
-                                <input type="password" formControlName="password" name="pass" class="form-control"
+                                <input type="password" formControlName="password" name="password" class="form-control"
                                     id="pass">
-                                <!-- <div style="color: red;"
-                                    *ngIf="this.loginForm.get('password')?.dirty&&this.loginForm.get('password')?.errors"
-                                    class="error">Invalid Password</div> -->
+                                    <div style="color: red;"
+                                    *ngIf="(this.loginForm.get('password')?.touched || this.loginForm.get('password')?.dirty) && this.loginForm.get('password')?.errors"
+                                    class="error">Invalid Password </div>
                             </div>
 
                             <button type="submit" class="btn btn-primary" (click)="login()">Login</button>

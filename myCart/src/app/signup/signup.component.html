@@ -9,7 +9,7 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
-<body >
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid" style="background-color: white;">
             <img class="logo" src="../assets/Images/mycart_logo.jpg" alt="No Image">
@@ -41,54 +41,69 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-12">
+        <form [formGroup]="signupForm">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <p><span class="required">* </span> <strong>All feilds are required</strong> </p>
+                    <div class="mb-3">
+                        Name : <input type="text" formControlName="name" name="name" class="form-control" id="name">
+                        <div style="color: red;"
+                            *ngIf="(this.signupForm.get('name')?.touched||this.signupForm.get('name')?.dirty)&&this.signupForm.get('name')?.errors"
+                            class="error">Invalid Name</div>
+                    </div>
+                    <div class="mb-3">
+                        Gender : <input type="radio" formControlName="gender" name="gender" value="male"> Male
+                        <input type="radio" formControlName="gender" name="gender" value="female"> Female
+                        <input type="radio" formControlName="gender" name="gender" value="other"> Other
+                    </div>
+                    <div class="mb-3">
+                        Phone : <input type="text" formControlName="phone" name="phone" class="form-control" id="phone">
+                        <div style="color: red;"
+                            *ngIf="(this.signupForm.get('phone')?.touched||this.signupForm.get('phone')?.dirty)&&this.signupForm.get('phone')?.errors"
+                            class="error">Invalid Phone Number</div>
+                    </div>
+                    <div class="mb-3">
+                        Pincode : <input type="text" formControlName="pincode" name="pincode" class="form-control"
+                            id="pincode">
+                            <div style="color: red;"
+                            *ngIf="(this.signupForm.get('pincode')?.touched||this.signupForm.get('pincode')?.dirty)&&this.signupForm.get('pincode')?.errors"
+                            class="error">Invalid Pincode</div>
+                    </div>
+                    <div class="mb-3">
+                        Username : <input type="text" formControlName="username" name="username" class="form-control"
+                            id="username">
+                            <div style="color: red;"
+                            *ngIf="(this.signupForm.get('username')?.touched||this.signupForm.get('username')?.dirty)&&this.signupForm.get('username')?.errors"
+                            class="error">Invalid Username</div>
+                    </div>
+                    <div class="mb-3">
+                        Password : <input type="password" formControlName="password" name="password"
+                            class="form-control" id="password">
+                        <div style="color: red;"
+                            *ngIf="(this.signupForm.get('password')?.touched||this.signupForm.get('password')?.dirty)&&this.signupForm.get('password')?.errors"
+                            class="error">Invalid Password</div>
+                    </div>
+
+
+
+
+
+                    <button type="submit" class="btn btn-primary" (click)="registerData()">Register</button>
+
+
+
+
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+
+                </div>
 
             </div>
-            <div class="col-lg-4 col-md-4 col-12">
-                <h1>REGISTER HERE</h1>
-                <div class="mb-3">
-                    Name : <input type="text" formControlName="name" name="name" class="form-control" id="name">
-                </div>
-                <div class="mb-3">
-                    Gender : <select>
-                        <option value="Male" name="gender">Male</option>
-                        <option value="Female" name="gender">Female</option>
-                        <option value="Transgender" name="gender">Transgender</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    Phone : <input type="text" formControlName="phone" name="phone" class="form-control" id="phone">
-                </div>
-                <div class="mb-3">
-                    Pincode : <input type="text" formControlName="pincode" name="pincode" class="form-control"
-                        id="pincode">
-                </div>
-                <div class="mb-3">
-                    Username : <input type="text" formControlName="username" name="username" class="form-control"
-                        id="username">
-                </div>
-                <div class="mb-3">
-                    Password : <input type="password" formControlName="password" name="password" class="form-control"
-                        id="password">
-                </div>
-
-
-
-
-
-                <button type="submit" class="btn btn-primary" (click)="registerData()">Register</button>
-
-
-
-
-
-            </div>
-            <div class="col-lg-4 col-md-4 col-12">
-
-            </div>
-
-        </div>
+        </form>
 
     </div>
 </body>

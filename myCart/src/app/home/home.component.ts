@@ -11,8 +11,8 @@ import { DataService } from '../services/data.service'
 export class HomeComponent implements OnInit {
 
   loginForm = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[a-zA-Z.@]*')]],
-    password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(16), Validators.pattern('[a-zA-Z0-9!@#$%^&*]*')]]
+    username: ['', [Validators.required, Validators.minLength(6), Validators.pattern('[a-zA-Z.@]*')]],
+    password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16), Validators.pattern('[a-zA-Z0-9!@#$%^&*]*')]]
   });
 
   constructor(private fb: FormBuilder, private dataService: DataService, private router: Router) { }
@@ -24,11 +24,21 @@ export class HomeComponent implements OnInit {
     if (this.loginForm.valid) {
       var username = this.loginForm.value.username;
       var password = this.loginForm.value.password;
-      alert(username + "   " + password)
-      this.dataService.login(username, password);
+      //alert(username + "   " + password)
+      this.dataService.login(username, password).subscribe((data: any) => {
+        if (data) {
+          console.log(data.message);
+          localStorage.setItem("name",data.name);
+          this.router.navigateByUrl("products");
+        }
+      },
+      (data) => {
+        alert(data.error.message);
+      })
+
     }
-    else{
-      alert(this.loginForm.valid);
+    else {
+      //alert(this.loginForm.valid);
       alert("Invalid Data! Please try again");
     }
   }
