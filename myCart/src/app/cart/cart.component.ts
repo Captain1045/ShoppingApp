@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,12 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  @Input()
+  name!: string | null;
+
+  constructor(private router:Router) { 
+    this.name=localStorage.getItem("name");
+  }
 
   ngOnInit(): void {
   }

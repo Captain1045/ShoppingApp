@@ -8,6 +8,14 @@ const Account = mongoose.model("Account", {
     phone:Number,
     gender:String
 });
+const Smartphone = mongoose.model("Smartphone",{
+    id:String,
+    name:String,
+    count:Number,
+    company:String,
+    price:Number
+});
 module.exports = {
-    Account
+    Account,
+    Smartphone
 }

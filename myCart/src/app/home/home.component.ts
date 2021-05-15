@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
     }
   }
   signUp() {
-    alert("Sign Up Clicked");
+    //alert("Sign Up Clicked");
     this.router.navigateByUrl("signup");
   }
 

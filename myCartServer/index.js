@@ -7,7 +7,19 @@ app.use(cors({
     origin: 'http://localhost:4200',
     credentials: true
 }))
-
+const authenticateMiddleware = (req, res, next) => {
+    //console.log(req.session.currentUser);
+    if (!req.session.currentUser) {
+        return res.json({
+            status: false,
+            statusCode: 422,
+            message: "Please Log in!"
+        })
+    }
+    else {
+        next();
+    }
+}
 app.use(express.json());
 app.use(session({
     secret: "randomsecurestring",
@@ -24,7 +36,7 @@ app.post("/login", (req, res) => {
         //console.log(req.session.currentUser);
     });
 });
-app.post("/signup", (req, res) => {
+app.post("/signup",authenticateMiddleware, (req, res) => {
 
     dataService.signUp(req, req.body.username, req.body.password,req.body.name,req.body.pincode,req.body.phone,req.body.gender).then(result => {
         res.status(result.statusCode).json(result);
